@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Chart the Stock Market</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Chart the Stock Market</h1>
+    <form id="stock-form">
+      <input type="text" id="stock-input" placeholder="Enter stock symbol..." required>
+      <button type="submit">Add Stock</button>
+    </form>
+
+    <canvas id="stock-chart"></canvas>
+    <ul id="stock-list"></ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
