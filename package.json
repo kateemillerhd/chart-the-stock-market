@@ -1,0 +1,17 @@
+{
+  "name": "chart-the-stock-market",
+  "version": "1.0.0",
+  "description": "A real-time stock tracking app built with Node.js, Express, WebSockets, and a charting library.  Users can add and remove stock by symbol, view recent trends, and see updates from other users in real time.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "Kate Miller",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}
