@@ -32,6 +32,7 @@ function renderList() {
     const li = document.createElement("li");
     li.textContent = stock.symbol;
     const btn = document.createElement("button");
+    btn.id = "remove-btn";
     btn.textContent = "Remove";
     btn.onclick = () => socket.emit("removeStock", stock.symbol);
     li.appendChild(btn);
