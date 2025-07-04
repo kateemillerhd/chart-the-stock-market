@@ -3,6 +3,7 @@ const form = document.getElementById("stock-form");
 const input = document.getElementById("stock-input");
 const chartCtx = document.getElementById("stock-chart").getContext("2d");
 const list = document.getElementById("stock-list");
+const errorMessage = document.getElementById('error-message');
 
 let chart;
 let colors = ["#f39c12", "#3498db", "#2ecc71", "#e74c3c"];
@@ -58,3 +59,10 @@ form.onsubmit = (e) => {
     input.value = "";
   }
 };
+
+socket.on("errorMessage", (msg) => {
+  errorMessage.textContent = msg;
+  setTimeout(() => {
+    errorMessage.textContent = "";
+  }, 4000);
+});

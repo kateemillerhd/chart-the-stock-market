@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+canvas {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+ul#stock-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul#stock-list li {
+  margin: 5px 0;
+}

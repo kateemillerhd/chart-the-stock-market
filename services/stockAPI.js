@@ -3,7 +3,7 @@ const axios = require('axios');
 const fetchStockData = async (symbol) => {
   try {
     const apiKey = process.env.ALPHA_VANTAGE_KEY;
-    const url = `https://www.alphavantage.co/query?function=TIME-SERIES-DAILY&symbol=${symbol}&apikey=${apiKey}`;
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${apiKey}`;
     const res = await axios.get(url);
     const data = res.data["Time Series (Daily)"];
 

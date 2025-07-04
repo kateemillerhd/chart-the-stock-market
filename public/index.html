@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chart the Stock Market</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -11,7 +12,7 @@
       <input type="text" id="stock-input" placeholder="Enter stock symbol..." required>
       <button type="submit">Add Stock</button>
     </form>
-
+    <p id="error-message" style="color: red;"></p>
     <canvas id="stock-chart"></canvas>
     <ul id="stock-list"></ul>
 

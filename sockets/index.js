@@ -18,6 +18,7 @@ module.exports = (io) => {
         io.emit("update", trackedStocks);
       } else {
         console.log("Invalid stock or failed to fetch:", symbol);
+        socket.emit("errorMessage", `Could not fetch data for "${symbol}". Please check the symbol and try again.`);
       }
     });
 
