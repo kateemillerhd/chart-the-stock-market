@@ -1,4 +1,5 @@
 const stockAPI = require('../services/stockAPI');
+const stockCache = {};
 
 let trackedStocks = [];
 
@@ -10,10 +11,17 @@ module.exports = (io) => {
 
     socket.on("addStock", async (symbol) => {
       console.log("Requested to add stock:", symbol);
-      
+
+      if (stockCache[symbol]) {
+        console.log("Serving from cache:", symbol);
+        trackedStocks.push({ symbol, data: stockCache[symbol] });
+        io.emit("update", trackedStocks);
+        return;
+      }
       const stockData = await stockAPI.fetchStockData(symbol);
       
       if (stockData) {
+        stockCache[symbol] = stockData;
         trackedStocks.push({ symbol, data: stockData });
         io.emit("update", trackedStocks);
       } else {
